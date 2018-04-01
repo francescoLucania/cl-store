@@ -1,1 +1,33 @@
 header.site-header
+    .container
+        .site-header__grid
+            .site-header__col
+                form.search-form
+                    button
+                        svg.icon.icon--26(role='img')
+                            use(xlink:href='img/icons.svg#icon-search')
+                    .input
+                        input(type='search' placeholder='Type here to search')
+
+            a.site-header__logo(href='#')
+                img(src='img/logo.svg' alt='cl')
+
+            .site-header__col
+                .site-header__menu
+
+                    a(href='#')
+                        span Account
+                        svg.icon.icon--26(role='img')
+                            use(xlink:href='img/icons.svg#icon-user')
+
+                    a(href='#')
+                        span Your Bag
+                        svg.icon.icon--26(role='img')
+                            use(xlink:href='img/icons.svg#icon-heart')
+
+                    a(href='#')
+                        span Your Bag
+                        svg.icon.icon--24(role='img')
+                            use(xlink:href='img/icons.svg#icon-basket')
+
+

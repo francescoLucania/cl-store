@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.site-navigate {
+    display: none;
+    border-top: 1px solid rgba($color-base, .1);
+
+    @include mq(lg) {
+        display: block;
+    }
+
+    &__grid {
+        display: flex;
+        justify-content: center;
+
+        > li {
+            > a {
+                @include interact(color, $color-base);
+
+                display: block;
+                padding: 1.9rem 2rem 2rem;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: $color-light;
+            }
+        }
+    }
+}

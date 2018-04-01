@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+.search-form {
+    display: none;
+
+    @include mq(lg) {
+        display: flex;
+        align-items: сenter;
+
+        > button {
+            @include size(2.8rem);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            box-shadow: none;
+            outline: none;
+
+            > .icon {
+                fill: $color-base;
+            }
+        }
+    }
+}

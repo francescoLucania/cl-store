@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.top-line {
+    @include text-sm;
+    
+    padding: 1rem 0;
+    background: $color-base;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+
+    @include mq(md) {
+        @include text-md;
+    }
+}

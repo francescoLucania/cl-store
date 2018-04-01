@@ -1,5 +1,67 @@
 @charset "UTF-8";
 
 .site-header {
-    // Styles
+    &__grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mq(md) {
+            padding: map-get($mq-indents, 'md') 0;
+        }
+
+        @include mq(lg) {
+            padding: map-get($mq-indents, 'lg') 0;
+        }
+
+        @include mq(xs) {
+            padding: map-get($mq-indents, 'xs') 0;
+        }
+
+        @include mq(xl) {
+            padding: map-get($mq-indents, 'xl') 0;
+        }
+    }
+
+    &__col {
+        @include mq(md) {
+            width: 40%;
+        }
+    }
+
+    &__logo {
+        display: block;
+
+        > img {
+            max-width: 19rem;
+            height: auto;
+            vertical-align: top;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: flex-end;
+
+        > a {
+            @include interact(color,$color-light);
+            @include interact(fill,$color-light, 'hover .icon');
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+
+            &:not(:last-child) {
+                margin-right: 2rem;
+            }
+
+            > span {
+                color: $color-base;
+            }
+
+            > .icon {
+                margin-left: .8rem;
+                fill: $color-base;
+            }
+        }
+    }
 }

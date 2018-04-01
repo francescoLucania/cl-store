@@ -9,5 +9,13 @@
         &.icon--20 {
             @include size(2rem);
         }
+
+        &.icon--24 {
+            @include size(2.4rem);
+        }
+
+        &.icon--26 {
+            @include size(2.6rem);
+        }
     }
 }

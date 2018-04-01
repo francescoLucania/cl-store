@@ -4,19 +4,26 @@
 $mq-breakpoints: (
     "sm": 767px,
     "md": 768px,
-    "lg": 1025px
+    "lg": 1025px,
+    "xs": 1380px,
+    "xl": 2100px
 );
 
 $mq-indents: (
     "sm": 1rem,
     "md": 2rem,
-    "lg": 3rem
+    "lg": 3rem,
+    "xs": 4rem,
+    "xl": 5rem
 );
 
 $mq-container-widths: (
     "sm": 100%,
     "md": 100%,
-    "lg": 1440px
+    "lg": 100%,
+    "ls": 100%,
+    "xl": 1600px
+
 );
 
 $mq-container-indents: (
@@ -48,7 +55,7 @@ $color-base: #121212;
 
 $color-light: rgba($color-base, .8);
 $color-lighter: rgba($color-base, .6);
-$color-lightest: rgba($color-base, .4);
+$color-lightest: rgba($color-base, .2);
 
 $color-brand: $color-base;
 
