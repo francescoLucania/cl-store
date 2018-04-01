@@ -33,7 +33,7 @@
         width: 12rem;
 
         @include mq(md) {
-            max-width: 19rem;
+            width: 19rem;
         }
 
         > img {
@@ -86,6 +86,26 @@
             &.account {
                 @include mq(sm) {
                     display: none;
+                }
+            }
+
+            &[data-quantity] {
+                position: relative;
+
+                &::after {
+                    @include font(.9rem, .9rem);
+
+                    position: absolute;
+                    top: -1rem;
+                    right: -1.2rem;
+                    padding: .4rem;
+                    min-width: 1.7rem;
+                    border-radius: 50%;
+                    background: $color-error;
+                    text-align: center;
+                    color: #fff;
+                    font-weight: 700;
+                    content: attr(data-quantity);
                 }
             }
         }

@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+.catalog {
+    padding: 4rem 0;
+
+    @include mq(lg) {
+        padding: 6.5rem 0 8rem;
+    }
+
+    &__grid {
+        margin-bottom: -2rem;
+
+        @include mq(sx) {
+            @include grid;
+        }
+
+        @include mq(md) {
+            margin-bottom: -3rem;
+        }
+
+        @include mq(lg) {
+            margin-bottom: -4rem;
+        }
+
+        @include mq(xs) {
+            margin-bottom: -5rem;
+        }
+    }
+
+    &__col {
+        margin-bottom: 2rem;
+
+        @include mq(sx) {
+            @include grid-col;
+            @include col-size(1/2);
+        }
+
+        @include mq(md) {
+            @include col-size(1/3);
+
+            margin-bottom: 3rem;
+        }
+
+        @include mq(lg) {
+            @include col-size(1/4);
+
+            margin-bottom: 4rem;
+        }
+
+        @include mq(xs) {
+            @include col-size(1/5);
+
+            margin-bottom: 5rem;
+        }
+
+        @include mq(xl) {
+            @include col-size(1/6);
+        }
+    }
+}
+
+// product item
+
+.product-item {
+    @include interact(visibility, visible, 'hover img:nth-child(2)');
+    @include interact(visibility, visible, 'hover .button');
+    position: relative; // for like button
+
+    &__image-box {
+
+        display: block;
+        position: relative;
+        border: 1px solid rgba($color-base, .1);
+        overflow: hidden;
+
+        > img {
+            width: 100%;
+            height: auto;
+            vertical-align: top;
+
+            &:nth-child(2) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 2;
+                visibility: hidden;
+                transform: translate(-50%,-50%);
+            }
+        }
+
+        > .button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 3;
+            transform: translate(-50%,-50%);
+
+            @include mq(md) {
+                visibility: hidden;
+            }
+        }
+    }
+
+    &__information {
+        margin-top: 2rem;
+        text-align: center;
+
+        @include mq(md) {
+            margin-top: 3rem;
+        }
+    }
+
+    &__information-brend {
+        display: block;
+        text-transform: uppercase;
+        color: $color-lighter;
+    }
+
+    &__information-brend,
+    &__title,
+    &__price-box {
+        > a {
+            color: inherit;
+
+            &:not([class]) {
+                @include interact(color,inherit);
+
+                text-decoration: none;
+            }
+
+        }
+    }
+
+    &__title,
+    &__price-box {
+        margin-top: 1rem;
+        font-weight: 700;
+        color: $color-base;
+    }
+
+    &__title {
+        @include text-md;
+    }
+
+
+    &__brice-box {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__price {
+        &:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+
+        &--last {
+            font-style: italic;
+            font-weight: 400;
+            text-decoration: line-through;
+            opacity: .64;
+        }
+    }
+
+    &__add-to-favorites {
+        @include interact(visibility, visible, 'hover span');
+        @include interact(fill, $color-error, 'hover .icon');
+
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        &.is-active {
+            > .icon {
+                fill: $color-error
+            }
+
+            > span {
+                &::before {
+                    content: 'remove from favorites';
+                }
+            }
+        }
+
+        > .icon {
+            margin-left: 1rem;
+            fill: $color-light;
+        }
+
+        > span {
+            @include text-sm;
+            display: block;
+            padding: 0 .3rem;
+            text-transform: uppercase;
+            background: $color-base;
+            color: #fff;
+
+            @include mq(md) {
+                visibility: hidden;
+            }
+
+            &::before {
+                content:'Add to favorites'
+            }
+        }
+    }
+
+}
