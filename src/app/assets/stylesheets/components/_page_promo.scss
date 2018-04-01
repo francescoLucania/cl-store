@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.page-promo {
+    padding: 5rem 5rem;
+    background: #efe8ef;
+    text-align: center;
+
+    @include mq(md) {
+        padding: 6rem 6rem;
+    }
+
+    > h1 {
+        @include h3;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        @include mq(md) {
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}

@@ -5,10 +5,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        @include mq(md) {
-            padding: map-get($mq-indents, 'md') 0;
-        }
+        padding: map-get($mq-indents, 'md') 0;
 
         @include mq(lg) {
             padding: map-get($mq-indents, 'lg') 0;
@@ -24,6 +21,8 @@
     }
 
     &__col {
+        width: 30%;
+
         @include mq(md) {
             width: 40%;
         }
@@ -31,9 +30,14 @@
 
     &__logo {
         display: block;
+        width: 12rem;
+
+        @include mq(md) {
+            max-width: 19rem;
+        }
 
         > img {
-            max-width: 19rem;
+            width: 100%;
             height: auto;
             vertical-align: top;
         }
@@ -51,7 +55,23 @@
             text-decoration: none;
 
             &:not(:last-child) {
-                margin-right: 2rem;
+                margin-right: 1rem;
+            }
+
+            @include mq(md) {
+                &:not(:last-child) {
+                    margin-right: 2rem;
+                }
+            }
+
+            > span {
+                display: none;
+            }
+
+            @include mq(lg) {
+                > span {
+                    display: block;
+                }
             }
 
             > span {
@@ -61,6 +81,54 @@
             > .icon {
                 margin-left: .8rem;
                 fill: $color-base;
+            }
+
+            &.account {
+                @include mq(sm) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__burger {
+        @include size(2.6rem);
+
+        position: relative;
+        display: flex;
+
+        @include mq(lg) {
+            display: none;
+        }
+
+        > span {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: $color-base;
+
+            &::before,
+            &::after {
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: $color-base;
+                content: "";
+            }
+
+            &::before {
+                top: 0;
+                transform: translateY(-800%);
+            }
+
+            &::after {
+                bottom: 0;
+                transform: translateY(800%);
             }
         }
     }

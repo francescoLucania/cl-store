@@ -2,6 +2,8 @@ header.site-header
     .container
         .site-header__grid
             .site-header__col
+                .site-header__burger
+                    span
                 form.search-form
                     button
                         svg.icon.icon--26(role='img')
@@ -15,7 +17,7 @@ header.site-header
             .site-header__col
                 .site-header__menu
 
-                    a(href='#')
+                    a.account(href='#')
                         span Account
                         svg.icon.icon--26(role='img')
                             use(xlink:href='img/icons.svg#icon-user')
