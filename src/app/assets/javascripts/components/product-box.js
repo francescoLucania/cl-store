@@ -8,6 +8,7 @@ $(function () {
 
             $('html').css('overflow', 'hidden');
             $('body').css('overflow', 'hidden');
+            $('body').css({'padding-right': scrollSize().width + 'px'});
 
             setTimeout(function () {
 
@@ -32,6 +33,7 @@ $(function () {
 
                 $('html').css('overflow', '');
                 $('body').css('overflow', '');
+                $('body').css('padding-right', '');
 
             }, 600)
         }

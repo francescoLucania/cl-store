@@ -64,10 +64,10 @@
 .product-item {
     @include interact(visibility, visible, 'hover img:nth-child(2)');
     @include interact(visibility, visible, 'hover .button');
+
     position: relative; // for like button
 
     &__image-box {
-
         display: block;
         position: relative;
         border: 1px solid rgba($color-base, .1);
@@ -127,7 +127,6 @@
 
                 text-decoration: none;
             }
-
         }
     }
 
@@ -141,7 +140,6 @@
     &__title {
         @include text-md;
     }
-
 
     &__brice-box {
         display: flex;
@@ -174,8 +172,10 @@
         text-decoration: none;
 
         &.is-active {
-            > .icon {
-                fill: $color-error
+            i {
+                > .icon {
+                    fill: $color-error;
+                }
             }
 
             > span {
@@ -185,13 +185,24 @@
             }
         }
 
-        > .icon {
+        i {
+            @include size(3.6rem);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-left: 1rem;
-            fill: $color-light;
+            background: #fff;
+            border-radius: 50%;
+
+            > .icon {
+                fill: $color-light;
+            }
         }
 
         > span {
             @include text-sm;
+
             display: block;
             padding: 0 .3rem;
             text-transform: uppercase;
@@ -203,9 +214,8 @@
             }
 
             &::before {
-                content:'Add to favorites'
+                content:'add to favorites'
             }
         }
     }
-
 }

@@ -3,7 +3,7 @@
 // Responsive (for example: xs, sm, md, lg, xl)
 $mq-breakpoints: (
     "sm": 767px,
-    "sx": 480px,
+    "sx": 540px,
     "md": 768px,
     "lg": 1025px,
     "xs": 1380px,
@@ -12,6 +12,7 @@ $mq-breakpoints: (
 
 $mq-indents: (
     "sm": 1.5rem,
+    "sx": 1.5rem,
     "md": 2rem,
     "lg": 3rem,
     "xs": 4rem,
@@ -20,23 +21,30 @@ $mq-indents: (
 
 $mq-container-widths: (
     "sm": 100%,
+    "sx": 100%,
     "md": 100%,
     "lg": 100%,
-    "ls": 100%,
+    "xs": 100%,
     "xl": 1600px
 
 );
 
 $mq-container-indents: (
     "sm": map-get($mq-indents, "sm"),
+    "sx": map-get($mq-indents, "sx"),
     "md": map-get($mq-indents, "md"),
-    "lg": map-get($mq-indents, "lg")
+    "lg": map-get($mq-indents, "lg"),
+    "xs": map-get($mq-indents, "xs"),
+    "xl": map-get($mq-indents, "xl")
 );
 
 $mq-grid-gutters: (
     "sm": map-get($mq-indents, "sm"),
+    "sx": map-get($mq-indents, "sx"),
     "md": map-get($mq-indents, "md"),
-    "lg": map-get($mq-indents, "lg")
+    "lg": map-get($mq-indents, "lg"),
+    "xs": map-get($mq-indents, "xs"),
+    "xl": map-get($mq-indents, "xl")
 );
 
 // Not responsive

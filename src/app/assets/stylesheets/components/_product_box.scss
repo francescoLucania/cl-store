@@ -83,6 +83,9 @@
 
             margin-bottom: 4rem;
         }
+        @include mq(md) {
+            @include col-size(1/3);
+        }
     }
 
     &__close {
